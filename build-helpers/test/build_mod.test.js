@@ -1,8 +1,9 @@
 const fs               = require('fs/promises');
-const { constants }      = require('fs');
+const { constants }    = require('fs');
 const path             = require('path');
 const chai             = require('chai');
 const chai_as_promised = require('chai-as-promised');
+const unzipit          = require('unzipit');
 
 chai.use(chai_as_promised);
 
@@ -30,21 +31,45 @@ describe('function build_mod', function ()
         .then(() => scenario);
     }
 
-    it('must generate zip file with the correct name inside destination folder', function ()
+    let scenario;
+
+    beforeEach(function ()
     {
-      let scenario;
       return build_scenario()
-        .then(test_scenario => (scenario = test_scenario))
-        .then(() => build_mod(scenario.source_folder.path, scenario.destination_folder.path))
-        .then(() =>
+        .then(new_scenario =>
         {
+          scenario = new_scenario;
+
           const { mod_info } = scenario;
           const expected_zip_name = `${mod_info.name}_${mod_info.version}.zip`;
           const expected_zip_path = path.join(scenario.destination_folder.path, expected_zip_name);
 
-          return Promise.all([
-            expect(fs.access(expected_zip_path, constants.R_OK)).to.eventually.be.fulfilled
-          ]);
+          scenario.expected_zip_name = expected_zip_name;
+          scenario.expected_zip_path = expected_zip_path;
+        });
+    });
+
+    it('must generate zip file with the correct name inside destination folder', function ()
+    {
+      return build_mod(scenario.source_folder.path, scenario.destination_folder.path)
+        .then(() => expect(fs.access(scenario.expected_zip_path, constants.R_OK)).to.eventually.be.fulfilled);
+    });
+
+    it('the contents must match mod contents', function ()
+    {
+      let zip_files;
+
+      return build_mod(scenario.source_folder.path, scenario.destination_folder.path)
+        .then(() => fs.readFile(scenario.expected_zip_path))
+        .then(zip_buffer => unzipit.unzip(new Uint8Array(zip_buffer)))
+        .then(({ entries }) => (zip_files = Object.keys(entries)))
+        .then(() => fs.readdir(scenario.source_folder.path))
+        .then(source_files =>
+        {
+          source_files.forEach((source_file, i) =>
+          {
+            expect(source_file).to.be.equal(zip_files[i]);
+          });
         });
     });
   });
