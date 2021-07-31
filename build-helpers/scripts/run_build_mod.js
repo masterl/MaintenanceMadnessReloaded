@@ -8,8 +8,13 @@ const Factorio  = require('../src/Factorio');
 const log = console.log;
 
 const mods_to_build = [
-  path.resolve('../../maintenance-madness-reloaded')
+  'maintenance-madness-reloaded'
 ];
+
+const generate_mod_path = (mod_name) =>
+{
+  return path.resolve(path.join(__dirname, '..', '..', mod_name));
+};
 
 const main = async () =>
 {
@@ -19,9 +24,9 @@ const main = async () =>
 
     log('Building mods to folder:', chalk.green(mods_folder), '...');
 
-    for (const mod_path of mods_to_build)
+    for (const mod_name of mods_to_build)
     {
-      const mod_name = path.parse(mod_path).base;
+      const mod_path = generate_mod_path(mod_name);
 
       log('Building mod', chalk.blue(mod_name), '...');
       await build_mod(mod_path, mods_folder);
