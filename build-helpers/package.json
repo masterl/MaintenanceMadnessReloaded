@@ -32,6 +32,7 @@
     "tmp-promise": "^3.0.2"
   },
   "dependencies": {
+    "chalk": "^4.1.2",
     "lodash": "^4.17.21",
     "unzipit": "^1.3.5",
     "zip-a-folder": "^1.1.0"
