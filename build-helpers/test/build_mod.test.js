@@ -46,6 +46,7 @@ describe('function build_mod', function ()
 
           scenario.expected_zip_name = expected_zip_name;
           scenario.expected_zip_path = expected_zip_path;
+          scenario.expected_zip_content_count = 7;
         });
     });
 
@@ -55,20 +56,40 @@ describe('function build_mod', function ()
         .then(() => expect(fs.access(scenario.expected_zip_path, constants.R_OK)).to.eventually.be.fulfilled);
     });
 
+    it('zip root must be the mod folder', function ()
+    {
+      return build_mod(scenario.source_folder.path, scenario.destination_folder.path)
+        .then(() => fs.readFile(scenario.expected_zip_path))
+        .then(zip_buffer => unzipit.unzip(new Uint8Array(zip_buffer)))
+        .then(({ entries }) => Object.keys(entries))
+        .then(zip_files =>
+        {
+          expect(zip_files).to.have.length(scenario.expected_zip_content_count);
+
+          const root_folder = path.parse(zip_files[0]).base;
+          const expected_folder = path.parse(scenario.source_folder.path).base;
+
+          expect(root_folder).to.be.equal(expected_folder);
+        });
+    });
+
     it('the contents must match mod contents', function ()
     {
-      let zip_files;
+      let mod_files;
 
       return build_mod(scenario.source_folder.path, scenario.destination_folder.path)
         .then(() => fs.readFile(scenario.expected_zip_path))
         .then(zip_buffer => unzipit.unzip(new Uint8Array(zip_buffer)))
-        .then(({ entries }) => (zip_files = Object.keys(entries)))
+        .then(({ entries }) => Object.keys(entries))
+        .then(zip_files => path.join('/tmp', zip_files[0]))
+        .then(fs.readdir)
+        .then(files => (mod_files = files))
         .then(() => fs.readdir(scenario.source_folder.path))
         .then(source_files =>
         {
           source_files.forEach((source_file, i) =>
           {
-            expect(source_file).to.be.equal(zip_files[i]);
+            expect(source_file).to.be.equal(mod_files[i]);
           });
         });
     });
