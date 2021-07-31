@@ -1,0 +1,9 @@
+{
+    "name": "maintenance-madness-reloaded",
+    "version": "0.9.16",
+    "title": "Maintenance Madness Reloaded",
+    "author": "Master_L",
+    "factorio_version": "1.1",
+    "dependencies": ["(?)MetamodCND", "(?)omnimatter", "(?)mini-machines"],
+    "description": "Adds a complete new game mechanic: Maintenance! Your machines now require regular servicing to avoid rapid wear down. Create a sophisticated spare parts logistics and bring your mall to its absolute limits! UPS-friendly and MP-tested. Now with a fancy GUI!"
+}

@@ -1,0 +1,167 @@
+---------------------------------------------------------------------------------------------------
+Version: 0.9.16
+Date:
+  Bugfixes:
+    - Updated factorio version on info.json
+    - Replaced most old mod name references to reference the current name
+---------------------------------------------------------------------------------------------------
+Version: 0.9.15
+Date: 2020-05-29
+  Features:
+    - Added new tech "Improved maintenance access" that will grant machines passive maintenance buffs if a maintenance device is placed nearby
+    - Added mod setting option to toggle console output for the "less maintenance at game start" mechanic
+    - Selected machines will now highlight all maintenance devices that affect them
+  Changes:
+    - Changed tech prerequisites for "Machine recycling" to make it researchable without chemical science packs
+    - Changed recipe for "Scrap recycler" to include engines instead of electric engines
+  Balancing:
+    - Reduced amount of materials needed to maintain labs and generators by about 40%
+  Bugfixes:
+    - Fixed incompatibility with Factorio 0.18.27+ (related to GUI style changes)
+    - Fixed that revived machines stayed inactive if they got destroyed while being under repair or waiting for replacement
+    - Fixed crash if a machine is replaced via upgrade planner while the player hovers above the item-request-proxy of said machine (thanks for pointing out, @Erythion)
+---------------------------------------------------------------------------------------------------
+Version: 0.9.14
+Date: 2020-05-08
+  Features:
+    - Added setting option for reduced maintenance at game start. This option will help in smoothing out the difficulty curve for marathon/deathworld/mod-pack games
+    - Machines requesting replacement will display a short text notice if the requested replacement has been delivered
+  Changes:
+    - Improved entity description of request proxies
+    - Changed DIY maintenance flying text behaviour to be more consistent with vanilla Factorio
+---------------------------------------------------------------------------------------------------
+Version: 0.9.13
+Date: 2020-03-17
+  Bugfixes:
+    - Fixed migration issue caused by 0.9.12 that resulted in some machines remaining inoperable even after repair/replacement
+---------------------------------------------------------------------------------------------------
+Version: 0.9.12
+Date: 2020-03-16
+  Changes:
+    - Machines are now operable also if they're broken down. This allows players to repair them or change their recipes
+    - Maintenance units will now display the number of currently serviced machines and the time remaining until next service is executed
+  Bugfixes:
+    - Fixed possible desync error in MP games related to a still active debug console print command
+    - Removed some other debug log commands
+    - Fixed error related to icon_size in some cases
+    - Fixed crash if selecting a maintenance unit in a game where this mod was added afterwards
+---------------------------------------------------------------------------------------------------
+Version: 0.9.11
+Date: 2020-03-07
+  Changes:
+    - Most loading stage script output does now depend on active debug mode
+  Bugfixes:
+    - Fixed error in loading stage caused by sprite size mismatch for accumulators and solar panels
+    - Fixed potential gui error caused by mod removal if items of that mod have been in use as maintenance or repair items for some machine types
+---------------------------------------------------------------------------------------------------
+Version: 0.9.10
+Date: 2020-03-07
+  Features:
+    - Updated for Factorio version 0.18.x
+    - Added "DIY maintenance": By pressing the F key, a player may transfer maintenance or repair items from his main inventory to a selected machine
+    - Added sound effects for breakdowns and repair events
+    - Added maintenance manager setting to set the maximum operation age per machine type
+    - Improved drawing logic of machine maintenance data overlay
+  Changes:
+    - Updated graphics to match the icon style of Factorio 0.18
+    - Improved entity description of item request proxies and maintenance unit
+  Bugfixes:
+    - Fixed error caused by missing technology description slot
+    - Fixed crash caused by creation of blueprints of maintenance units that are connected to circuit units - blueprinting of maintenance units with circuit connections will ignore circuit wires for now
+    - Fixed placed maintenance units not showing the last user interacting with them
+---------------------------------------------------------------------------------------------------
+Version: 0.9.9
+Date: 2019-09-24
+  Bugfixes:
+    - Hotfix of a migration issue caused by the introduction of "Idle mode"
+---------------------------------------------------------------------------------------------------
+Version: 0.9.8
+Date: 2019-09-24
+  Features:
+    - Added option to disable replacement for machines
+  Balancing:
+    - Added "idle" mode for miners, labs, boilers, generators and reactors
+    - Idle machines suffer only 50% of damage in case of failures
+  Changes:
+    - Reduced max value for default replacement age from 1000 to 300
+    - Changing the default setting for replacement age will now trigger an update for all machine types that used the prior default setting
+    - Increased max value for machine specific replacement from 150 to 300
+    - Replacement age is no longer neccessary for the internal cycle time calculation.
+  Bugfixes:
+    - Fixed GUI issue if display scale is greater than 1
+    - Fixed aging of idle machines with a positive number of remaining bonus cycles
+---------------------------------------------------------------------------------------------------
+Version: 0.9.7
+Date: 2019-09-11
+  Features:
+    - Repair mechanic updated: To repair a broken machine, only repair packs are needed. After providing them, the machine will request additional repair materials, which will in turn significantly reduce repair time.
+    - Added a gui to select specific item usage rules for your machines
+    - Added maximum operation age: Machines that reach this age (currently 150% of expected operation age) will shut down to prevent critical failures
+  Balancing:
+    - Repair mechanic update: From now on only repair are needed to repair broken machines. This will make basic maintenance of bases much less of a hassle.
+    - Repair mechanic update: The more repair materials delivered, the less time is needed for repair. Repair of a machine only with repair packs will take much more time (5 times more by default).
+    - Demand for repair materials has been adjusted for some machine types
+    - Increased range of maintenance unit to 4 tiles, increased energy demand to 76 kW, reduced repair rate to 4 percent
+    - Mining young machines (age below 25%) which haven't yet produced anything will not return scrapped machines
+  Changes:
+    - Increased the setting limit for max machine age to 720 hours (30 days) to accommodate for games on online servers
+    - Increased the setting limit for MTBM to 720 minutes (10 hours) to accommodate for games on online servers
+    - Initial bonus cycles are now cumulative with wear reduction factor
+  Bugfixes:
+    - Fixed already delivered maintenance materials not showing up on the production tab as consumption if the coresponding entity was destroyed
+    - Fixed missing replacement requests after repair of old solar panels and accumulators
+    - Fixed wrong icon size for some scrap items of mod machines
+    - Fixed that removing request proxies with a deconstruction planner would grant free repair or replacement. Deconstructed request proxies will now be recreated after some time
+    - Fixed that health bars of invisible chests behind machines would be visible if the coresponding machine got attacked
+---------------------------------------------------------------------------------------------------
+Version: 0.9.6
+Date: 2019-06-18
+  Bugfixes:
+    - Fixed a crash if maintenance unit is connected to an invalid electric energy interface entity
+    - Fixed a potential issue caused by missing removal of invalid maintenance unit entity identifiers
+---------------------------------------------------------------------------------------------------
+Version: 0.9.5
+Date: 2019-06-13
+  Features:
+    - Added a simple maintenance unit for early game servicing
+    - Added new early game tech "Repair and maintenance"
+    - The information overlay now displays the average maintenance level
+    - The information overlay now displays the remaining time needed to repair broken machines
+  Bugfixes:
+    - Fixed machines ageing 33% too fast if not serviced perfectly
+    - Fixed migration issue caused by introduction of wear reduction factor
+    - Fixed a crash on startup related to modded solar panels with icons bigger than 32 px
+    - Fixed load order issue related to Mini Machines mod
+---------------------------------------------------------------------------------------------------
+Version: 0.9.4
+Date: 2019-06-08
+  Features:
+    - Added information overlay that displays the age of the currently selected machine (works only while ALT-mode enabled)
+  Bugfixes:
+    - Fixed that machines didn't request replacements
+    - Fixed migration issue caused by introduction of wear reduction factor
+---------------------------------------------------------------------------------------------------
+Version: 0.9.3
+Date: 2019-06-05
+  Features:
+    - Added wear reduction factor depending on machine usage
+  Balancing:
+    - Machines of type CraftingMachine that haven't produced any items within one maintenance interval do now age significantly slower.
+  Bugfixes:
+    - Fixed that the inital free cycles did not increase the age of the machine
+    - Fixed a crash on startup if mods are present that add entities without a selection box
+---------------------------------------------------------------------------------------------------
+Version: 0.9.2
+Date: 2019-05-19
+  Features:
+    - Added mechanical and electronical spare parts
+  Balancing:
+    - Reduced mainenance cost and simplified maintenance supply for almost all entities (but especially assembling machines, furnaces and generators) by using the new mechanical and electronical spare parts
+    - Reduced amount of repair packs needed for repair of broken machines
+  Bugfixes:
+    - Fixed that entities which have been removed by other scripts via destroy() sometimes left maintenance chests behind
+---------------------------------------------------------------------------------------------------
+Version: 0.9.1
+Date: 2019-04-21
+  Features:
+    - Initial release
