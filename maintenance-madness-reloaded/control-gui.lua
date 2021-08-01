@@ -870,7 +870,7 @@ function mmGUI.toggleMasterPanel(player_index, update)
     global.maintenanceControl[forceID].numOptions = countChangedSettings(forceID)
 
     ui.root = {}
-    ui.root.gui = player.gui.screen.add{type = 'frame', name = 'maintenanceMadness-window', direction = 'vertical', style = "dialog_frame"}
+    ui.root.gui = player.gui.screen.add{type = 'frame', name = 'maintenanceMadness-window', direction = 'vertical', style = "frame"}
 
     local root = ui.root
     local gui = root.gui
