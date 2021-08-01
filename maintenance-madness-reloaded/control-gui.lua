@@ -1,4 +1,4 @@
-require("mod-gui")
+local mod_gui = require("mod-gui")
 local mmUtil = require("util.util")
 local mmGUI = {}
 local mceil = math.ceil
