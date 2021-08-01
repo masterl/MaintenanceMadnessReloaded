@@ -15,10 +15,10 @@ internalSettings.reconditionTimeMinimum = 12 -- minimum energy needed to recondi
 internalSettings.reconditionSparePartFactor = 0.5 -- percentage of items needed to complete the recondition of scrapped entities
 
 internalSettings.entityTypesWithMROenabled = {
-	["assembling-machine"] = true, 
-	["furnace"] = true, 
-	["solar-panel"] = true, 
-	["accumulator"] = true, 
+	["assembling-machine"] = true,
+	["furnace"] = true,
+	["solar-panel"] = true,
+	["accumulator"] = true,
 	["reactor"] = true,
 	["boiler"] = true,
 	["generator"] = true,
