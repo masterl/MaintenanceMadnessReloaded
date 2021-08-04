@@ -1,0 +1,6 @@
+[
+  {
+    "files": "**/*.lua",
+    "command": "lua-format -i ${srcFile}"
+  }
+]
