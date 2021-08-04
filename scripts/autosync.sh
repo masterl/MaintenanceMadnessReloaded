@@ -15,7 +15,7 @@ function main()
 {
   while true; do
     find "$MAIN_MOD_FOLDER" -type f |
-    entr -d bash "$SCRIPTS_DIR/entr_script.sh" "$PROJECT_ROOT"
+    entr -d bash "$SCRIPTS_DIR/entr_autosync.sh" "$PROJECT_ROOT"
 
     if [[ $? -eq 0 ]]; then
       exit
