@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.9.16
-Date:
+Date: 2021-08-04
   Bugfixes:
     - Updated factorio version on info.json
     - Replaced most old mod name references to reference the current name
