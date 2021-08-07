@@ -1,4 +1,4 @@
-insulate( 'add_mod_prefix', function()
+insulate( 'util.add_mod_prefix', function()
     local add_mod_prefix = require( 'util/add_mod_prefix' )
 
     it( 'should prefix with mod name', function()

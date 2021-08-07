@@ -1,4 +1,4 @@
-insulate( 'mod_folder_path', function()
+insulate( 'util.mod_folder_path', function()
     local mod_folder_path = require( 'util/mod_folder_path' )
 
     it( 'should prefix with mod name', function()
