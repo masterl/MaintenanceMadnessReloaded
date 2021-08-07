@@ -23,4 +23,16 @@ insulate( 'util.gfx module', function()
             assert.is.equal( expected, get_entity_path( entity_filename ) )
         end )
     end )
+
+    describe( 'gfx.get_tech_path', function()
+        local get_tech_path = gfx.get_tech_path
+        it( 'should return the correct path for the tech', function()
+            local tech_filename<const> = 'test.png'
+            local expected<const> =
+                '__maintenance-madness-reloaded__/graphics/tech/' ..
+                    tech_filename
+
+            assert.is.equal( expected, get_tech_path( tech_filename ) )
+        end )
+    end )
 end )
