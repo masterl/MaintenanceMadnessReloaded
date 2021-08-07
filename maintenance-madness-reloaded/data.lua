@@ -1,0 +1,5 @@
+require( 'prototypes.items' )
+require( 'prototypes.item-groups' )
+require( 'prototypes.crafting-categories' )
+require( 'prototypes.entities' )
+require( 'prototypes.recipes' )
