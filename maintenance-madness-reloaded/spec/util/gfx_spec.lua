@@ -35,4 +35,16 @@ insulate( 'util.gfx module', function()
             assert.is.equal( expected, get_tech_path( tech_filename ) )
         end )
     end )
+
+    describe( 'gfx.get_tools_path', function()
+        local get_tools_path = gfx.get_tools_path
+        it( 'should return the correct path for the tool', function()
+            local tool_filename<const> = 'test.png'
+            local expected<const> =
+                '__maintenance-madness-reloaded__/graphics/tools/' ..
+                    tool_filename
+
+            assert.is.equal( expected, get_tools_path( tool_filename ) )
+        end )
+    end )
 end )
