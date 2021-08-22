@@ -1,0 +1,12 @@
+{
+    "recommendations": [
+        "eamodio.gitlens",
+        "coenraads.bracket-pair-colorizer-2",
+        "sumneko.lua",
+        "davidanson.vscode-markdownlint",
+        "editorconfig.editorconfig",
+        "koihik.vscode-lua-format",
+        "aaron-bond.better-comments",
+        "zhuangtongfa.material-theme"
+    ]
+  }
