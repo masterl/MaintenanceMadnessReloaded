@@ -2,8 +2,7 @@
     "editor.suggestSelection": "recentlyUsedByPrefix",
     "editor.suggest.showWords": false,
     "editor.formatOnSave": true,
-    "lua.targetVersion": "5.2",
-    "Lua.runtime.version": "Lua 5.2",
+    "Lua.runtime.version": "Lua 5.4",
     "Lua.workspace.preloadFileSize": 1600,
     "Lua.diagnostics.globals": [
         "game",
