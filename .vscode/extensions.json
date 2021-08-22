@@ -1,7 +1,7 @@
 {
     "recommendations": [
         "eamodio.gitlens",
-        "coenraads.bracket-pair-colorizer-2",
+        "mhutchie.git-graph",
         "sumneko.lua",
         "davidanson.vscode-markdownlint",
         "editorconfig.editorconfig",
@@ -9,4 +9,4 @@
         "aaron-bond.better-comments",
         "zhuangtongfa.material-theme"
     ]
-  }
+}
