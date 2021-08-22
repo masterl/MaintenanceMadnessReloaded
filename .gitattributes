@@ -1,0 +1,13 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Force bash scripts to always use LF line endings so that if a repo is accessed
+# in Unix via a file share from Windows, the scripts will work.
+*.sh text eol=lf
+
+*.md text diff=markdown
+
+# These files are binary and should be left untouched
+*.png binary
+*.zip binary
+*.ogg binary
