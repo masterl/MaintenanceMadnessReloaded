@@ -11,3 +11,8 @@
 *.png binary
 *.zip binary
 *.ogg binary
+
+# Exclude files from exporting
+.gitattributes export-ignore
+.gitignore export-ignore
+/.vscode export-ignore
