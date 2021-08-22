@@ -26,7 +26,11 @@
         "default_circuit_wire_max_distance",
         "universal_connector_template",
         "__DebugAdapter",
-        "__Profiler"
+        "__Profiler",
+        "insulate",
+        "describe",
+        "it",
+        "setup"
     ],
     "Lua.workspace.ignoreDir": [
         ".vscode",
