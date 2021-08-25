@@ -1,4 +1,7 @@
 {
+    "editor.rulers": [
+        80
+    ],
     "editor.suggestSelection": "recentlyUsedByPrefix",
     "editor.suggest.showWords": false,
     "editor.formatOnSave": true,
