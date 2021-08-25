@@ -15,11 +15,17 @@ function ModInfo:new( obj )
     obj.prefix = obj.name .. '-'
     obj.folder = '__' .. obj.name .. '__'
 
-    obj.gfx_path = path_join( obj.folder, 'graphics' )
-    obj.gfx_icons_path = path_join( obj.gfx_path, 'icons' )
-    obj.gfx_entities_path = path_join( obj.gfx_path, 'entity' )
-    obj.gfx_technologies_path = path_join( obj.gfx_path, 'technology' )
-    obj.sounds_path = path_join( obj.folder, 'sound' )
+    if obj.gfx_folder then
+        obj.gfx_path = path_join( obj.folder, obj.gfx_folder )
+    else
+        obj.gfx_path = path_join( obj.folder, 'graphics' )
+    end
+
+    if obj.sounds_folder then
+        obj.sounds_path = path_join( obj.folder, obj.sounds_folder )
+    else
+        obj.sounds_path = path_join( obj.folder, 'sound' )
+    end
 
     return obj
 end

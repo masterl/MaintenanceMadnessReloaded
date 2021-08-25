@@ -57,30 +57,52 @@ insulate( 'util.ModInfo', function()
                 assert.is.equal( expected, helper.gfx_path )
             end )
 
-            it( 'should have gfx_icons_path field with a default value',
-                function()
-                local expected<const> = '__' .. mod_name .. '__/graphics/icons'
+            it( 'should have sounds_path field with a default value', function()
+                local expected<const> = '__' .. mod_name .. '__/sound'
 
-                assert.is.equal( expected, helper.gfx_icons_path )
+                assert.is.equal( expected, helper.sounds_path )
+            end )
+        end )
+
+        describe( 'when specifying all options', function()
+            local mod_name = 'test-mod'
+            local gfx_folder = 'graf'
+            local sounds_folder = 'asrar-somzada'
+            local helper
+
+            setup( function()
+                helper = ModInfo:new( {
+                    name = mod_name,
+                    gfx_folder = gfx_folder,
+                    sounds_folder = sounds_folder
+                } )
             end )
 
-            it( 'should have gfx_entities_path field with a default value',
-                function()
-                local expected<const> = '__' .. mod_name .. '__/graphics/entity'
-
-                assert.is.equal( expected, helper.gfx_entities_path )
+            it( 'should have name field', function()
+                assert.is.equal( mod_name, helper.name )
             end )
 
-            it( 'should have gfx_technologies_path field with a default value',
-                function()
-                local expected<const> = '__' .. mod_name ..
-                                            '__/graphics/technology'
+            it( 'should have prefix field', function()
+                local expected<const> = mod_name .. '-'
 
-                assert.is.equal( expected, helper.gfx_technologies_path )
+                assert.is.equal( expected, helper.prefix )
+            end )
+
+            it( 'should have folder field', function()
+                local expected<const> = '__' .. mod_name .. '__'
+
+                assert.is.equal( expected, helper.folder )
+            end )
+
+            it( 'should have set gfx_path with specified value', function()
+                local expected<const> = '__' .. mod_name .. '__/' .. gfx_folder
+
+                assert.is.equal( expected, helper.gfx_path )
             end )
 
             it( 'should have sounds_path field with a default value', function()
-                local expected<const> = '__' .. mod_name .. '__/sound'
+                local expected<const> = '__' .. mod_name .. '__/' ..
+                                            sounds_folder
 
                 assert.is.equal( expected, helper.sounds_path )
             end )
@@ -88,7 +110,7 @@ insulate( 'util.ModInfo', function()
     end )
 
     describe( 'ModInfo:get_path_to_graphics', function()
-        local mod_name = 'test-mod'
+        local mod_name = 'some-test-mod'
         local mod_info
 
         setup( function()
@@ -117,7 +139,7 @@ insulate( 'util.ModInfo', function()
     end )
 
     describe( 'ModInfo:get_path_to_sounds', function()
-        local mod_name = 'test-mod'
+        local mod_name = 'another-test-mod'
         local mod_info
 
         setup( function()
