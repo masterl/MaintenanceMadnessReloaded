@@ -1,5 +1,6 @@
 return {
   ['exclude'] = {
     '/usr%/.+$',
+    'spec/.+$'
   }
 }
