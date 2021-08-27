@@ -9,15 +9,15 @@ data:extend( {
         name = this_mod:add_prefix( 'machine-failure-sound' ),
         variations = {
             {
-                filename = this_mod:get_path_to_sounds( 'machine-failure-1.ogg' ),
+                filename = this_mod:get_sounds_path( 'machine-failure-1.ogg' ),
                 volume = 0.7
             },
             {
-                filename = this_mod:get_path_to_sounds( 'machine-failure-2.ogg' ),
+                filename = this_mod:get_sounds_path( 'machine-failure-2.ogg' ),
                 volume = 0.5
             },
             {
-                filename = this_mod:get_path_to_sounds( 'machine-failure-3.ogg' ),
+                filename = this_mod:get_sounds_path( 'machine-failure-3.ogg' ),
                 volume = 0.7
             }
         }
@@ -27,17 +27,17 @@ data:extend( {
         name = this_mod:add_prefix( 'machine-fixed-sound' ),
         variations = {
             {
-                filename = base_mod:get_path_to_sounds(
+                filename = base_mod:get_sounds_path(
                     'power-switch-activate-1.ogg' ),
                 volume = 0.8
             },
             {
-                filename = base_mod:get_path_to_sounds(
+                filename = base_mod:get_sounds_path(
                     'power-switch-activate-2.ogg' ),
                 volume = 0.8
             },
             {
-                filename = base_mod:get_path_to_sounds(
+                filename = base_mod:get_sounds_path(
                     'power-switch-activate-3.ogg' ),
                 volume = 0.8
             }

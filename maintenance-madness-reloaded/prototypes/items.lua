@@ -6,7 +6,7 @@ data:extend( {
     {
         type = 'repair-tool',
         name = this_mod:add_prefix( 'toolbox' ),
-        icon = this_mod:get_path_to_graphics( 'tools/toolbox.png' ),
+        icon = this_mod:get_graphics_path( 'tools/toolbox.png' ),
         icon_size = 64,
         flags = {},
         subgroup = 'tool',
@@ -18,7 +18,7 @@ data:extend( {
     {
         type = 'repair-tool',
         name = this_mod:add_prefix( 'machine-oil' ),
-        icon = this_mod:get_path_to_graphics( 'tools/machine-oil.png' ),
+        icon = this_mod:get_graphics_path( 'tools/machine-oil.png' ),
         icon_size = 64,
         flags = {},
         subgroup = 'tool',
@@ -30,7 +30,7 @@ data:extend( {
     {
         type = 'repair-tool',
         name = this_mod:add_prefix( 'detergent' ),
-        icon = this_mod:get_path_to_graphics( 'tools/detergent.png' ),
+        icon = this_mod:get_graphics_path( 'tools/detergent.png' ),
         icon_size = 64,
         flags = {},
         subgroup = 'tool',
@@ -42,7 +42,7 @@ data:extend( {
     {
         type = 'repair-tool',
         name = this_mod:add_prefix( 'mechanical-spare-parts' ),
-        icon = this_mod:get_path_to_graphics( 'tools/mechanical-spare-parts.png' ),
+        icon = this_mod:get_graphics_path( 'tools/mechanical-spare-parts.png' ),
         icon_size = 64,
         flags = {},
         subgroup = 'tool',
@@ -54,8 +54,7 @@ data:extend( {
     {
         type = 'repair-tool',
         name = this_mod:add_prefix( 'electronical-spare-parts' ),
-        icon = this_mod:get_path_to_graphics(
-            'tools/electronical-spare-parts.png' ),
+        icon = this_mod:get_graphics_path( 'tools/electronical-spare-parts.png' ),
         icon_size = 64,
         flags = {},
         subgroup = 'tool',
@@ -67,7 +66,7 @@ data:extend( {
     {
         type = 'item',
         name = this_mod:add_prefix( 'recycler' ),
-        icon = this_mod:get_path_to_graphics( 'icons/recycler.png' ),
+        icon = this_mod:get_graphics_path( 'icons/recycler.png' ),
         icon_size = 32,
         flags = {},
         subgroup = 'production-machine',
@@ -78,7 +77,7 @@ data:extend( {
     {
         type = 'item',
         name = this_mod:add_prefix( 'simple-maintenance-unit' ),
-        icon = this_mod:get_path_to_graphics(
+        icon = this_mod:get_graphics_path(
             'icons/simple-maintenance-unit-icon.png' ),
         icon_size = 64,
         flags = {},

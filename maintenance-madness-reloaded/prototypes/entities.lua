@@ -1,13 +1,14 @@
 local mod_helpers = require( 'util.mod_helpers' )
 
 local this_mod = mod_helpers.this_mod
+local base_mod = mod_helpers.base_mod
 
 local function add_recycler()
     data:extend( {
         {
             type = 'furnace',
             name = this_mod:add_prefix( 'recycler' ),
-            icon = this_mod:get_path_to_graphics( 'icons/recycler.png' ),
+            icon = this_mod:get_graphics_path( 'icons/recycler.png' ),
             icon_size = 32,
             flags = { 'placeable-neutral', 'placeable-player', 'player-creation' },
             minable = {
@@ -64,7 +65,7 @@ local function add_recycler()
             animation = {
                 layers = {
                     {
-                        filename = this_mod:get_path_to_graphics(
+                        filename = this_mod:get_graphics_path(
                             'entities/recycler.png' ),
                         priority = 'high',
                         width = 107,
@@ -73,7 +74,7 @@ local function add_recycler()
                         shift = util.by_pixel( 0, 1 ), -- TODO
                         -- shift = {0.421875, 0},
                         hr_version = {
-                            filename = this_mod:get_path_to_graphics(
+                            filename = this_mod:get_graphics_path(
                                 'entities/hr-recycler.png' ),
                             priority = 'high',
                             width = 214,
@@ -85,7 +86,7 @@ local function add_recycler()
                         }
                     },
                     {
-                        filename = this_mod:get_path_to_graphics(
+                        filename = this_mod:get_graphics_path(
                             'entities/recycler-shadow.png' ),
                         priority = 'high',
                         width = 98,
@@ -95,7 +96,7 @@ local function add_recycler()
                         shift = util.by_pixel( 12, 5 ),
                         draw_as_shadow = true,
                         hr_version = {
-                            filename = this_mod:get_path_to_graphics(
+                            filename = this_mod:get_graphics_path(
                                 'entities/hr-recycler-shadow.png' ),
                             priority = 'high',
                             width = 196,
@@ -112,7 +113,7 @@ local function add_recycler()
             working_visualisations = {
                 {
                     animation = {
-                        filename = this_mod:get_path_to_graphics(
+                        filename = this_mod:get_graphics_path(
                             'entities/recycler-propeller.png' ),
                         priority = 'high',
                         width = 19,
@@ -121,7 +122,7 @@ local function add_recycler()
                         animation_speed = 0.5,
                         shift = util.by_pixel( 7, -18.5 ),
                         hr_version = {
-                            filename = this_mod:get_path_to_graphics(
+                            filename = this_mod:get_graphics_path(
                                 'entities/hr-recycler-propeller.png' ),
                             priority = 'high',
                             width = 37,
@@ -143,7 +144,7 @@ local function add_maintenance_unit()
         {
             type = 'container',
             name = this_mod:add_prefix( 'simple-maintenance-unit' ),
-            icon = this_mod:get_path_to_graphics(
+            icon = this_mod:get_graphics_path(
                 'icons/simple-maintenance-unit-icon.png' ),
             icon_size = 64,
             flags = { 'placeable-neutral', 'player-creation' },
@@ -182,14 +183,14 @@ local function add_maintenance_unit()
             picture = {
                 layers = {
                     {
-                        filename = this_mod:get_path_to_graphics(
+                        filename = this_mod:get_graphics_path(
                             'entities/simple-maintenance-unit.png' ),
                         priority = 'extra-high',
                         width = 35,
                         height = 42,
                         shift = util.by_pixel( 0, -1.5 ),
                         hr_version = {
-                            filename = this_mod:get_path_to_graphics(
+                            filename = this_mod:get_graphics_path(
                                 'entities/hr-simple-maintenance-unit.png' ),
                             priority = 'extra-high',
                             width = 70,
@@ -199,7 +200,7 @@ local function add_maintenance_unit()
                         }
                     },
                     {
-                        filename = this_mod:get_path_to_graphics(
+                        filename = this_mod:get_graphics_path(
                             'entities/simple-maintenance-unit-shadow.png' ),
                         priority = 'extra-high',
                         width = 56,
@@ -207,7 +208,7 @@ local function add_maintenance_unit()
                         shift = util.by_pixel( 12, 7.5 ),
                         draw_as_shadow = true,
                         hr_version = {
-                            filename = this_mod:get_path_to_graphics(
+                            filename = this_mod:get_graphics_path(
                                 'entities/hr-simple-maintenance-unit-shadow.png' ),
                             priority = 'extra-high',
                             width = 110,
@@ -249,7 +250,7 @@ local function add_request_proxy( name, icon_path )
             type = 'item-request-proxy',
             name = this_mod:add_prefix( name ),
             picture = {
-                filename = this_mod:get_path_to_graphics( icon_path ),
+                filename = this_mod:get_graphics_path( icon_path ),
                 flags = { 'icon' },
                 priority = 'extra-high',
                 width = 64,

@@ -9,7 +9,7 @@ data:extend( {
         type = 'item-group',
         name = main_group_name,
         order = 'zz',
-        icon = this_mod:get_path_to_graphics( 'icons/item-group.png' ),
+        icon = this_mod:get_graphics_path( 'icons/item-group.png' ),
         icon_size = 64
     }
 } )

@@ -58,7 +58,7 @@ insulate( 'util.ModInfo', function()
             end )
 
             it( 'should have sounds_path field with a default value', function()
-                local expected<const> = '__' .. mod_name .. '__/sound'
+                local expected<const> = '__' .. mod_name .. '__/sounds'
 
                 assert.is.equal( expected, helper.sounds_path )
             end )
@@ -100,7 +100,7 @@ insulate( 'util.ModInfo', function()
                 assert.is.equal( expected, helper.gfx_path )
             end )
 
-            it( 'should have sounds_path field with a default value', function()
+            it( 'should have sounds_path field with specified value', function()
                 local expected<const> = '__' .. mod_name .. '__/' ..
                                             sounds_folder
 
@@ -109,7 +109,7 @@ insulate( 'util.ModInfo', function()
         end )
     end )
 
-    describe( 'ModInfo:get_path_to_graphics', function()
+    describe( 'ModInfo:get_graphics_path', function()
         local mod_name = 'some-test-mod'
         local mod_info
 
@@ -121,8 +121,7 @@ insulate( 'util.ModInfo', function()
             local filename<const> = 'test.png'
             local expected<const> = mod_info.folder .. '/graphics/' .. filename
 
-            assert.is
-                .equal( expected, mod_info:get_path_to_graphics( filename ) )
+            assert.is.equal( expected, mod_info:get_graphics_path( filename ) )
         end )
 
         it( 'should be able to handle nested folders', function()
@@ -132,13 +131,13 @@ insulate( 'util.ModInfo', function()
                 mod_info.folder .. '/graphics/' .. nested[1] .. '/' .. nested[2] ..
                     '/' .. filename
 
-            assert.is.equal( expected, mod_info:get_path_to_graphics( nested[1],
-                                                                      nested[2],
-                                                                      filename ) )
+            assert.is.equal( expected, mod_info:get_graphics_path( nested[1],
+                                                                   nested[2],
+                                                                   filename ) )
         end )
     end )
 
-    describe( 'ModInfo:get_path_to_sounds', function()
+    describe( 'ModInfo:get_sounds_path', function()
         local mod_name = 'another-test-mod'
         local mod_info
 
@@ -148,20 +147,21 @@ insulate( 'util.ModInfo', function()
 
         it( 'should return the correct path', function()
             local filename<const> = 'test.png'
-            local expected<const> = mod_info.folder .. '/sound/' .. filename
+            local expected<const> = mod_info.folder .. '/sounds/' .. filename
 
-            assert.is.equal( expected, mod_info:get_path_to_sounds( filename ) )
+            assert.is.equal( expected, mod_info:get_sounds_path( filename ) )
         end )
 
         it( 'should be able to handle nested folders', function()
             local filename<const> = 'test.png'
             local nested<const> = { 'icons', 'deep' }
-            local expected<const> = mod_info.folder .. '/sound/' .. nested[1] ..
-                                        '/' .. nested[2] .. '/' .. filename
+            local expected<const> =
+                mod_info.folder .. '/sounds/' .. nested[1] .. '/' .. nested[2] ..
+                    '/' .. filename
 
-            assert.is.equal( expected, mod_info:get_path_to_sounds( nested[1],
-                                                                    nested[2],
-                                                                    filename ) )
+            assert.is.equal( expected, mod_info:get_sounds_path( nested[1],
+                                                                 nested[2],
+                                                                 filename ) )
         end )
     end )
 

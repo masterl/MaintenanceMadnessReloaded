@@ -2,8 +2,8 @@ local constants = require( 'util.constants' )
 local ModInfo = require( 'util.ModInfo' )
 
 local this = ModInfo:new( { name = constants.mod_name } )
-local base = ModInfo:new( { name = 'base' } )
-local core = ModInfo:new( { name = 'core' } )
+local base = ModInfo:new( { name = 'base', sounds_folder = 'sound' } )
+local core = ModInfo:new( { name = 'core', sounds_folder = 'sound' } )
 
 -- LuaFormatter off
 return {

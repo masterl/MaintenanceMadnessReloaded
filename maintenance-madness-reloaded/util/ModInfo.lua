@@ -24,17 +24,17 @@ function ModInfo:new( obj )
     if obj.sounds_folder then
         obj.sounds_path = path_join( obj.folder, obj.sounds_folder )
     else
-        obj.sounds_path = path_join( obj.folder, 'sound' )
+        obj.sounds_path = path_join( obj.folder, 'sounds' )
     end
 
     return obj
 end
 
-function ModInfo:get_path_to_graphics( ... )
+function ModInfo:get_graphics_path( ... )
     return path_join( self.gfx_path, ... )
 end
 
-function ModInfo:get_path_to_sounds( ... )
+function ModInfo:get_sounds_path( ... )
     return path_join( self.sounds_path, ... )
 end
 
