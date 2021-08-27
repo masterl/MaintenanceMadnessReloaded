@@ -1,33 +1,44 @@
-local add_mod_prefix = require( 'util.add_mod_prefix' )
-local get_sound_path = require( 'util.get_sound_path' )
-local base_mod = require( 'util.base_mod' )
+local mod_helpers = require( 'util.mod_helpers' )
 
-local get_base_sound_path = base_mod.get_sound_path
+local this_mod = mod_helpers.this_mod
+local base_mod = mod_helpers.base_mod
 
 data:extend( {
     {
         type = 'sound',
-        name = add_mod_prefix( 'machine-failure-sound' ),
+        name = this_mod:add_prefix( 'machine-failure-sound' ),
         variations = {
-            { filename = get_sound_path( 'machine-failure-1.ogg' ), volume = 0.7 },
-            { filename = get_sound_path( 'machine-failure-2.ogg' ), volume = 0.5 },
-            { filename = get_sound_path( 'machine-failure-3.ogg' ), volume = 0.7 }
+            {
+                filename = this_mod:get_path_to_sounds( 'machine-failure-1.ogg' ),
+                volume = 0.7
+            },
+            {
+                filename = this_mod:get_path_to_sounds( 'machine-failure-2.ogg' ),
+                volume = 0.5
+            },
+            {
+                filename = this_mod:get_path_to_sounds( 'machine-failure-3.ogg' ),
+                volume = 0.7
+            }
         }
     },
     {
         type = 'sound',
-        name = add_mod_prefix( 'machine-fixed-sound' ),
+        name = this_mod:add_prefix( 'machine-fixed-sound' ),
         variations = {
             {
-                filename = get_base_sound_path( 'power-switch-activate-1.ogg' ),
+                filename = base_mod:get_path_to_sounds(
+                    'power-switch-activate-1.ogg' ),
                 volume = 0.8
             },
             {
-                filename = get_base_sound_path( 'power-switch-activate-2.ogg' ),
+                filename = base_mod:get_path_to_sounds(
+                    'power-switch-activate-2.ogg' ),
                 volume = 0.8
             },
             {
-                filename = get_base_sound_path( 'power-switch-activate-3.ogg' ),
+                filename = base_mod:get_path_to_sounds(
+                    'power-switch-activate-3.ogg' ),
                 volume = 0.8
             }
         }

@@ -38,4 +38,8 @@ function ModInfo:get_path_to_sounds( ... )
     return path_join( self.sounds_path, ... )
 end
 
+function ModInfo:add_prefix( str )
+    return self.prefix .. str
+end
+
 return ModInfo

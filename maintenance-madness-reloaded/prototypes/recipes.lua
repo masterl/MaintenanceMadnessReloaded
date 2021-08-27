@@ -1,4 +1,6 @@
-local add_mod_prefix = require( 'util.add_mod_prefix' )
+local mod_helpers = require( 'util.mod_helpers' )
+
+local this_mod = mod_helpers.this_mod
 
 local function add_recipe( recipe )
     recipe.type = 'recipe'
@@ -15,19 +17,19 @@ local function add_recipe( recipe )
 end
 
 add_recipe( {
-    name = add_mod_prefix( 'toolbox' ),
+    name = this_mod:add_prefix( 'toolbox' ),
     energy_required = 16,
     ingredients = {
         { 'repair-pack', 5 },
         { 'electric-engine-unit', 2 },
-        { add_mod_prefix( 'machine-oil' ), 2 },
-        { add_mod_prefix( 'electronical-spare-parts' ), 5 },
-        { add_mod_prefix( 'mechanical-spare-parts' ), 10 }
+        { this_mod:add_prefix( 'machine-oil' ), 2 },
+        { this_mod:add_prefix( 'electronical-spare-parts' ), 5 },
+        { this_mod:add_prefix( 'mechanical-spare-parts' ), 10 }
     }
 } )
 
 add_recipe( {
-    name = add_mod_prefix( 'machine-oil' ),
+    name = this_mod:add_prefix( 'machine-oil' ),
     energy_required = 1,
     category = 'crafting-with-fluid',
     ingredients = {
@@ -37,7 +39,7 @@ add_recipe( {
 } )
 
 add_recipe( {
-    name = add_mod_prefix( 'mechanical-spare-parts' ),
+    name = this_mod:add_prefix( 'mechanical-spare-parts' ),
     energy_required = 10,
     ingredients = {
         { 'iron-gear-wheel', 2 },
@@ -48,7 +50,7 @@ add_recipe( {
 } )
 
 add_recipe( {
-    name = add_mod_prefix( 'electronical-spare-parts' ),
+    name = this_mod:add_prefix( 'electronical-spare-parts' ),
     energy_required = 10,
     ingredients = {
         { 'copper-cable', 4 },
@@ -59,7 +61,7 @@ add_recipe( {
 } )
 
 add_recipe( {
-    name = add_mod_prefix( 'detergent' ),
+    name = this_mod:add_prefix( 'detergent' ),
     energy_required = 2,
     category = 'chemistry',
     ingredients = {
@@ -76,7 +78,7 @@ add_recipe( {
 } )
 
 add_recipe( {
-    name = add_mod_prefix( 'recycler' ),
+    name = this_mod:add_prefix( 'recycler' ),
     energy_required = 5,
     ingredients = {
         { 'engine-unit', 3 },
@@ -88,7 +90,7 @@ add_recipe( {
 } )
 
 add_recipe( {
-    name = add_mod_prefix( 'simple-maintenance-unit' ),
+    name = this_mod:add_prefix( 'simple-maintenance-unit' ),
     energy_required = 2,
     ingredients = {
         { 'electronic-circuit', 5 },
@@ -105,8 +107,8 @@ local function add_recipe_to_tech( recipe, technology )
     end
 end
 
-add_recipe_to_tech( add_mod_prefix( 'detergent' ), 'plastics' )
-add_recipe_to_tech( add_mod_prefix( 'machine-oil' ), 'lubricant' )
-add_recipe_to_tech( add_mod_prefix( 'mechanical-spare-parts' ),
+add_recipe_to_tech( this_mod:add_prefix( 'detergent' ), 'plastics' )
+add_recipe_to_tech( this_mod:add_prefix( 'machine-oil' ), 'lubricant' )
+add_recipe_to_tech( this_mod:add_prefix( 'mechanical-spare-parts' ),
                     'steel-processing' )
-add_recipe_to_tech( add_mod_prefix( 'electronical-spare-parts' ), 'battery' )
+add_recipe_to_tech( this_mod:add_prefix( 'electronical-spare-parts' ), 'battery' )

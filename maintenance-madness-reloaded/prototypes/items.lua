@@ -1,11 +1,12 @@
-local add_mod_prefix = require( 'util.add_mod_prefix' )
-local mod_folder_path = require( 'util.mod_folder_path' )
+local mod_helpers = require( 'util.mod_helpers' )
+
+local this_mod = mod_helpers.this_mod
 
 data:extend( {
     {
         type = 'repair-tool',
-        name = add_mod_prefix( 'toolbox' ),
-        icon = mod_folder_path( '/graphics/tools/toolbox.png' ),
+        name = this_mod:add_prefix( 'toolbox' ),
+        icon = this_mod:get_path_to_graphics( 'tools/toolbox.png' ),
         icon_size = 64,
         flags = {},
         subgroup = 'tool',
@@ -16,8 +17,8 @@ data:extend( {
     },
     {
         type = 'repair-tool',
-        name = add_mod_prefix( 'machine-oil' ),
-        icon = mod_folder_path( '/graphics/tools/machine-oil.png' ),
+        name = this_mod:add_prefix( 'machine-oil' ),
+        icon = this_mod:get_path_to_graphics( 'tools/machine-oil.png' ),
         icon_size = 64,
         flags = {},
         subgroup = 'tool',
@@ -28,8 +29,8 @@ data:extend( {
     },
     {
         type = 'repair-tool',
-        name = add_mod_prefix( 'detergent' ),
-        icon = mod_folder_path( '/graphics/tools/detergent.png' ),
+        name = this_mod:add_prefix( 'detergent' ),
+        icon = this_mod:get_path_to_graphics( 'tools/detergent.png' ),
         icon_size = 64,
         flags = {},
         subgroup = 'tool',
@@ -40,8 +41,8 @@ data:extend( {
     },
     {
         type = 'repair-tool',
-        name = add_mod_prefix( 'mechanical-spare-parts' ),
-        icon = mod_folder_path( '/graphics/tools/mechanical-spare-parts.png' ),
+        name = this_mod:add_prefix( 'mechanical-spare-parts' ),
+        icon = this_mod:get_path_to_graphics( 'tools/mechanical-spare-parts.png' ),
         icon_size = 64,
         flags = {},
         subgroup = 'tool',
@@ -52,8 +53,9 @@ data:extend( {
     },
     {
         type = 'repair-tool',
-        name = add_mod_prefix( 'electronical-spare-parts' ),
-        icon = mod_folder_path( '/graphics/tools/electronical-spare-parts.png' ),
+        name = this_mod:add_prefix( 'electronical-spare-parts' ),
+        icon = this_mod:get_path_to_graphics(
+            'tools/electronical-spare-parts.png' ),
         icon_size = 64,
         flags = {},
         subgroup = 'tool',
@@ -64,25 +66,25 @@ data:extend( {
     },
     {
         type = 'item',
-        name = add_mod_prefix( 'recycler' ),
-        icon = mod_folder_path( '/graphics/icons/recycler.png' ),
+        name = this_mod:add_prefix( 'recycler' ),
+        icon = this_mod:get_path_to_graphics( 'icons/recycler.png' ),
         icon_size = 32,
         flags = {},
         subgroup = 'production-machine',
         order = 'y2',
-        place_result = add_mod_prefix( 'recycler' ),
+        place_result = this_mod:add_prefix( 'recycler' ),
         stack_size = 20
     },
     {
         type = 'item',
-        name = add_mod_prefix( 'simple-maintenance-unit' ),
-        icon = mod_folder_path(
-            '/graphics/icons/simple-maintenance-unit-icon.png' ),
+        name = this_mod:add_prefix( 'simple-maintenance-unit' ),
+        icon = this_mod:get_path_to_graphics(
+            'icons/simple-maintenance-unit-icon.png' ),
         icon_size = 64,
         flags = {},
         subgroup = 'production-machine',
         order = 'y1',
-        place_result = add_mod_prefix( 'simple-maintenance-unit' ),
+        place_result = this_mod:add_prefix( 'simple-maintenance-unit' ),
         stack_size = 50
     }
 } )

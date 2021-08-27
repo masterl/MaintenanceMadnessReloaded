@@ -1,11 +1,13 @@
-local add_mod_prefix = require( 'util.add_mod_prefix' )
+local mod_helpers = require( 'util.mod_helpers' )
+
+local this_mod = mod_helpers.this_mod
 
 local function add_recipe_category( name )
     -- LuaFormatter off
     data:extend( {
         {
             type = 'recipe-category',
-            name = add_mod_prefix( name )
+            name = this_mod:add_prefix( name )
         }
     } )
     -- LuaFormatter on

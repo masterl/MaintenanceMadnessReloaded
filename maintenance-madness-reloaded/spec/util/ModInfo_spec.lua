@@ -164,4 +164,20 @@ insulate( 'util.ModInfo', function()
                                                                     filename ) )
         end )
     end )
+
+    describe( 'ModInfo:add_prefix', function()
+        local mod_name = 'prefix-test-mod'
+        local mod_info
+
+        setup( function()
+            mod_info = ModInfo:new( { name = mod_name } )
+        end )
+
+        it( 'should return the string with the correct prefix', function()
+            local str<const> = 'some-string'
+            local expected<const> = mod_name .. '-' .. str
+
+            assert.is.equal( expected, mod_info:add_prefix( str ) )
+        end )
+    end )
 end )

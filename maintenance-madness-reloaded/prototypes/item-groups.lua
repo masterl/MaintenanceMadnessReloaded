@@ -1,14 +1,15 @@
-local add_mod_prefix = require( 'util.add_mod_prefix' )
-local mod_folder_path = require( 'util.mod_folder_path' )
+local mod_helpers = require( 'util.mod_helpers' )
 
-local main_group_name = add_mod_prefix( 'main-group' )
+local this_mod = mod_helpers.this_mod
+
+local main_group_name = this_mod:add_prefix( 'main-group' )
 
 data:extend( {
     {
         type = 'item-group',
         name = main_group_name,
         order = 'zz',
-        icon = mod_folder_path( '/graphics/icons/item-group.png' ),
+        icon = this_mod:get_path_to_graphics( 'icons/item-group.png' ),
         icon_size = 64
     }
 } )
@@ -17,7 +18,7 @@ local function add_subgroup( name, order )
     data:extend( {
         {
             type = 'item-subgroup',
-            name = add_mod_prefix( name ),
+            name = this_mod:add_prefix( name ),
             group = main_group_name,
             order = order
         }
