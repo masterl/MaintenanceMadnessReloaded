@@ -1,6 +1,7 @@
 require( 'prototypes.items' )
 require( 'prototypes.item-groups' )
 require( 'prototypes.crafting-categories' )
+require( 'prototypes.custom-inputs' )
 require( 'prototypes.entities' )
 require( 'prototypes.recipes' )
 require( 'prototypes.animations' )
