@@ -1,4 +1,4 @@
-local constants = require( 'util.constants' )
+local constants = require( 'constants' )
 local ModInfo = require( 'util.ModInfo' )
 
 local this = ModInfo:new( { name = constants.mod_name } )
