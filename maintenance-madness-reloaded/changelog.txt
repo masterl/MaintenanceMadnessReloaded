@@ -1,9 +1,12 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.9.16
 Date: 2021-08-04
+  Changes:
+    - Replaced some old mod name references to reference the current name
   Bugfixes:
     - Updated factorio version on info.json
-    - Replaced most old mod name references to reference the current name
+    - Replaced unknown "dialog_frame" style with "frame" style
+    - Fixed nil mod_gui error
 ---------------------------------------------------------------------------------------------------
 Version: 0.9.15
 Date: 2020-05-29
