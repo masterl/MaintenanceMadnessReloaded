@@ -15,7 +15,6 @@ local enabled_entity_types = {
 }
 
 local constants = {
-    mod_name = 'maintenance-madness-reloaded',
     recycle_time_multiplier = 2,
     recycle_time_minimum = 6,
     recondition_time_multiplier = 4,

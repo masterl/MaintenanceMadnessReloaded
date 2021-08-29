@@ -1,7 +1,6 @@
-local constants = require( 'constants' )
 local ModInfo = require( 'util.ModInfo' )
 
-local this = ModInfo:new( { name = constants.mod_name } )
+local this = ModInfo:new( { name = 'maintenance-madness-reloaded' } )
 local base = ModInfo:new( { name = 'base', sounds_folder = 'sound' } )
 local core = ModInfo:new( { name = 'core', sounds_folder = 'sound' } )
 
