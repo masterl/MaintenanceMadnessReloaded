@@ -68,6 +68,8 @@ end
 
 -- LuaFormatter still doesn't chop kv tables right
 -- LuaFormatter off
+-- ! This setting doesn't make sense
+-- ? What's the point of having the mod enabled in-game but not working?
 add_bool_setting( {
     name = 'mod-active',
     default_value = true
