@@ -6,13 +6,13 @@ Maintenance Madness mod updated for Factorio 1.1 version.
 
 ---
 
-### License
+## License
 
 [MIT](LICENSE)
 
 ---
 
-### Credit:
+## Credit
 
 Original creator: [Arcitos](https://mods.factorio.com/user/Arcitos)
 
