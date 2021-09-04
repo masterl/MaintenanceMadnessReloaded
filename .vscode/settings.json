@@ -33,7 +33,9 @@
         "insulate",
         "describe",
         "it",
-        "setup"
+        "setup",
+        "default_orange_color",
+        "default_dirt"
     ],
     "Lua.workspace.ignoreDir": [
         ".vscode",
