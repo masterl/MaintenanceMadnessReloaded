@@ -6,6 +6,7 @@ local SECONDS_PER_HOUR = 3600
 local SECONDS_PER_MINUTE = 60
 local TICKS_PER_SECOND = 60
 local TICKS_PER_MINUTE = SECONDS_PER_MINUTE * TICKS_PER_SECOND
+local TICKS_PER_HOUR = SECONDS_PER_HOUR * TICKS_PER_SECOND
 
 local time = {}
 
@@ -35,6 +36,13 @@ end
 ---@return number
 function time.minutes_to_ticks( time_in_minutes )
     return time_in_minutes * TICKS_PER_MINUTE
+end
+
+---Convert a time in hours to the corresponding amount of game ticks.
+---@param time_in_hours number
+---@return number
+function time.hours_to_ticks( time_in_hours )
+    return time_in_hours * TICKS_PER_HOUR
 end
 
 return time

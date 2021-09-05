@@ -5,6 +5,7 @@ insulate( 'util.conversions.time', function()
     local SECONDS_PER_HOUR = 3600
     local TICKS_PER_SECOND = 60
     local TICKS_PER_MINUTE = SECONDS_PER_MINUTE * TICKS_PER_SECOND
+    local TICKS_PER_HOUR = SECONDS_PER_HOUR * TICKS_PER_SECOND
 
     describe( 'time.hours_to_seconds', function()
         local hours_to_seconds = time.hours_to_seconds
@@ -23,6 +24,15 @@ insulate( 'util.conversions.time', function()
             assert.are.equal( 1 * SECONDS_PER_MINUTE, minutes_to_seconds( 1 ) )
             assert.are.equal( 1.5 * SECONDS_PER_MINUTE,
                               minutes_to_seconds( 1.5 ) )
+        end )
+    end )
+
+    describe( 'time.hours_to_ticks', function()
+        local hours_to_ticks = time.hours_to_ticks
+
+        it( 'should correctly convert values from hours to ticks', function()
+            assert.are.equal( 1 * TICKS_PER_HOUR, hours_to_ticks( 1 ) )
+            assert.are.equal( 12.5 * TICKS_PER_HOUR, hours_to_ticks( 12.5 ) )
         end )
     end )
 
