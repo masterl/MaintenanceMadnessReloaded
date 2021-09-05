@@ -10,6 +10,15 @@ insulate( 'util.conversions.time', function()
         end )
     end )
 
+    describe( 'time.minutes_to_seconds', function()
+        local minutes_to_seconds = time.minutes_to_seconds
+
+        it( 'should correctly convert values from hours to seconds', function()
+            assert.are.equal( 60, minutes_to_seconds( 1 ) )
+            assert.are.equal( 90, minutes_to_seconds( 1.5 ) )
+        end )
+    end )
+
     describe( 'time.seconds_to_ticks', function()
         local seconds_to_ticks = time.seconds_to_ticks
 
