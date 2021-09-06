@@ -6,7 +6,7 @@ readonly PROJECT_ROOT="$1"
 
 function main()
 {
-  # tput reset
+  tput reset
 
   ensure_project_root_was_informed "$1"
 
